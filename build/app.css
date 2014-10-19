@@ -1,1 +1,77 @@
-.container { background-color: red;}
+* {
+    font-family: 'Shadows Into Light', cursive;
+}
+
+[ng-view] {
+    background-color: white;
+}
+
+.flexcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.flexcontainer {
+    flex-direction: column;
+}
+
+@media screen and (min-width: 600px) {
+    .flexcontainer {
+        flex-direction: row;
+    }
+}
+
+.one, .two, .three, .four, .five, .six {
+    height: 20mm;
+    width: 30mm;
+    background-color: green;
+    border-color: black;
+    border-width: 2px;
+    
+    margin-top: 2mm;
+    margin-right: 2px;
+    margin-left: 2pt;
+    margin-bottom: 2mm;
+}
+
+.four {
+    align-self: flex-end;
+}
+
+.two {
+    height: 35mm;
+}
+
+.five {
+    width: 60mm;
+}
+
+.one {
+    order: 1;
+    font-size: 35px;
+}
+
+.two {
+    order: 2;
+    font-size: 3em;
+}
+
+.three {
+    order: 3;
+    font-size: 150%;
+}
+
+.four {
+    order: 4;
+    font-size: 10mm;
+}
+
+.five {
+    order: 5;
+}
+
+.six {
+    order: 6;
+}
