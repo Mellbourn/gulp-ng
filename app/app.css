@@ -46,29 +46,23 @@
 }
 
 .one {
-    order: 1;
     font-size: 35px;
 }
 
 .two {
-    order: 2;
     font-size: 3em;
 }
 
 .three {
-    order: 3;
     font-size: 150%;
 }
 
 .four {
-    order: 4;
     font-size: 10mm;
 }
 
 .five {
-    order: 5;
 }
 
 .six {
-    order: 6;
 }
