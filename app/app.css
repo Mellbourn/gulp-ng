@@ -35,6 +35,12 @@
     margin-right: 2px;
     margin-left: 2pt;
     margin-bottom: 2mm;
+
+
+    transition: all 1s linear 0s;
+
+.flexcontainer > div:hover {
+    width: 70mm;
 }
 
 .two {
