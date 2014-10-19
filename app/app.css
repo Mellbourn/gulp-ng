@@ -36,8 +36,15 @@
     margin-left: 2pt;
     margin-bottom: 2mm;
 
+    padding: 2mm;
 
     transition: all 1s linear 0s;
+
+    /* text is also centered */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .flexcontainer > div:hover {
     width: 70mm;
