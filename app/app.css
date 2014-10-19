@@ -1,5 +1,6 @@
 * {
     font-family: 'Shadows Into Light', cursive;
+    font-size: 1.05em;
 }
 
 [ng-view] {
@@ -24,8 +25,11 @@
 }
 
 .one, .two, .three, .four, .five, .six {
-    height: 20mm;
-    width: 30mm;
+    flex-grow: 1;
+    flex-shrink: 0.5;
+
+    flex-basis: 30mm;
+
     background-color: green;
     border-color: black;
     border-width: 2px;
@@ -47,34 +51,28 @@
 }
 
 .flexcontainer > div:hover {
-    width: 70mm;
+    flex-grow: 2;
+}
+
+.one {
+    /*font-size: 3em;*/
 }
 
 .two {
     height: 35mm;
 }
 
-.five {
-    width: 60mm;
-}
-
-.one {
-    font-size: 35px;
-}
-
-.two {
-    font-size: 3em;
-}
-
 .three {
-    font-size: 150%;
+    flex-grow: 2;
+    /*font-size: 150%;*/
 }
 
 .four {
-    font-size: 10mm;
+    /*font-size: 6mm;*/
 }
 
 .five {
+    flex-grow: 3;
 }
 
 .six {
