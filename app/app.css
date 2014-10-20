@@ -74,3 +74,56 @@
 
 .six {
 }
+
+/* animation */
+.animated {
+    position: absolute;
+    left: 0;
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    -webkit-animation-name: multistage;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-timing-function: ease;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@-webkit-keyframes myfirst {
+    from {
+        background-color: red;
+    }
+    to {
+        background-color: yellow;
+    }
+}
+
+@-webkit-keyframes multistage {
+    0% {
+        background-color: red;
+        left: 0;
+        opacity: 1;
+        font-size: 30px;
+        transform: rotate(0deg);
+    }
+    25% {
+        background-color: yellow;
+    }
+    50% {
+        background-color: blue;
+    }
+    75% {
+        background-color: green;
+    }
+    100% {
+        background-color: black;
+        left: 200px;
+        opacity: 0.5;
+        font-size: 5px;
+        transform: rotate(360deg);
+    }
+}
