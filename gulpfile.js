@@ -16,7 +16,7 @@ gulp.task("typescript", function() {
         );
 })
 
-gulp.task('scripts', function(){
+gulp.task('scripts', ['typescript'], function(){
     //combine all js files of the app
     gulp.src(['!./app/**/*_test.js','./app/**/*.js'])
         .pipe(plugins.jshint())
