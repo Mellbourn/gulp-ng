@@ -1,5 +1,20 @@
 var gulp = require('gulp');
 var plugins = require("gulp-load-plugins")({lazy:false});
+var eventStream = require("event-stream");
+
+gulp.task("typescript", function() {
+    var tsResult = gulp.src('app/**/*.ts')
+      .pipe(plugins.typescript(
+          { 
+            declarationFiles: true,
+            noExternalResolve: true 
+        }));
+
+    return eventStream.merge(
+        tsResult.dts.pipe(gulp.dest('build/definitions')),
+        tsResult.js.pipe(gulp.dest("app"))
+        );
+})
 
 gulp.task('scripts', function(){
     //combine all js files of the app
@@ -23,6 +38,8 @@ gulp.task('css', function(){
         .pipe(plugins.concat('app.css'))
         .pipe(gulp.dest('./build'));
 });
+
+gulp
 
 gulp.task('vendorJS', function(){
     //concatenate vendor JS files
@@ -54,6 +71,7 @@ gulp.task('watch',function(){
         return gulp.src(event.path)
             .pipe(plugins.connect.reload());
     });
+    gulp.watch(['app/**/*.ts'],['typescript']);
     gulp.watch(['./app/**/*.js','!./app/**/*test.js'],['scripts']);
     gulp.watch(['!./app/index.html','./app/**/*.html'],['templates']);
     gulp.watch('./app/**/*.css',['css']);
@@ -67,4 +85,4 @@ gulp.task('connect', plugins.connect.server({
     livereload: true
 }));
 
-gulp.task('default',['connect','scripts','templates','css','copy-index','vendorJS','vendorCSS','watch']);
+gulp.task('default',['connect', 'typescript','scripts','templates','css','copy-index','vendorJS','vendorCSS','watch']);

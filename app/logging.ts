@@ -1,1 +1,1 @@
-console.log('in ts file');
+console.log('in ts file version 2');
